@@ -10,10 +10,20 @@ import Flicking from './Flicking';
 class Layout extends React.Component {
 	constructor() {
 		super();
-		this.state = {
-			'todoData':JSON.parse(localStorage.getItem('todoData'))
+		let tmp = JSON.parse(localStorage.getItem('todoData'));
+		if(tmp){
+			this.state = {
+				'todoData':JSON.parse(localStorage.getItem('todoData'))
+			}
+
+			this.arrTodo = JSON.parse(localStorage.getItem('todoData'));
+		}else{
+			this.state = {
+				'todoData':[]
+			}
+
+			this.arrTodo = [];
 		}
-		this.arrTodo = JSON.parse(localStorage.getItem('todoData'));
 	}
 
 	addList($obj) {
