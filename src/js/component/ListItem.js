@@ -5,14 +5,22 @@ export default class ListItem extends React.Component {
 		return (
 			<li className="list-item">
 				<div className="list-content">
-					<p className="list-item-title"><a href="#">리스트 제목 입니다.</a></p>
-					<span className="list-item-sub">2016.04.26</span>
+					<p className="list-item-title">{this.props.title}</p>
+					<span className="list-item-sub">{this.props.date}</span>
 				</div>
 				<div className="list-btns">
-					<button type="button" className="edit-btn">EDIT</button>
-					<button type="button" className="delete-btn">DELETE</button>
+					<button type="button" className="edit-btn" onClick={this.editClick}>EDIT</button>
+					<button type="button" className="delete-btn" onClick={this.delClick}>DELETE</button>
 				</div>
 			</li>
 		);
+	}
+
+	editClick(e) {
+		console.log(e.currentTarget);
+	}
+
+	delClick(e) {
+		console.log(e.currentTarget);
 	}
 }
