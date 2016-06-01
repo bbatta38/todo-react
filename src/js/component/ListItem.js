@@ -3,24 +3,24 @@ import React from 'react';
 export default class ListItem extends React.Component {
 	render() {
 		return (
-			<li className="list-item">
+			<li ref="currentList" className="list-item">
 				<div className="list-content">
-					<p className="list-item-title">{this.props.title}</p>
+					<p ref="comment" className="list-item-title">{this.props.title}</p>
 					<span className="list-item-sub">{this.props.date}</span>
 				</div>
 				<div className="list-btns">
-					<button type="button" className="edit-btn" onClick={this.editClick}>EDIT</button>
-					<button type="button" className="delete-btn" onClick={this.delClick}>DELETE</button>
+					<button type="button" className="edit-btn" onClick={this.editClick.bind(this)}>EDIT</button>
+					<button type="button" className="delete-btn" onClick={this.delClick.bind(this)}>DELETE</button>
 				</div>
 			</li>
 		);
 	}
 
 	editClick(e) {
-		console.log(e.currentTarget);
+		this.props.editClick(this.props.idx, this.refs.comment.innerHTML);
 	}
 
 	delClick(e) {
-		console.log(e.currentTarget);
+		this.props.editClick(this.props.idx);
 	}
 }
