@@ -3,7 +3,7 @@ import React from 'react';
 export default class ListItem extends React.Component {
 	render() {
 		return (
-			<li ref="currentList" className="list-item">
+			<li className="list-item">
 				<div className="list-content">
 					<p ref="comment" className="list-item-title">{this.props.title}</p>
 					<span className="list-item-sub">{this.props.date}</span>

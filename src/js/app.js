@@ -1,4 +1,4 @@
-import css from '../css/main.css';
+import css from '../css/main.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
